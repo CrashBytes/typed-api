@@ -21,11 +21,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
           # NO registry-url - prevents .npmrc conflicts with OIDC
 
-      - name: Upgrade npm for Trusted Publishing
-        run: npm install -g npm@latest  # Requires npm >= 11.5.1
+      - name: Upgrade npm for Trusted Publishing (needs >= 11.5.1)
+        run: |
+          npm install -g npm@latest
+          echo "npm now: $(npm --version)  node: $(node --version)"
 
       - name: Install dependencies
         run: npm ci
@@ -37,7 +39,9 @@ jobs:
         run: npm run build
 
       - name: Publish to npm with Provenance
-        run: npm publish --provenance --access public
+        run: |
+          echo "publish using npm $(npm --version) on node $(node --version)"
+          npm publish --provenance --access public
         # OIDC authentication via GitHub Actions - no tokens needed!
 
       - name: Create GitHub Release
