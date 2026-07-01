@@ -17,7 +17,7 @@ export type RoutesMap = Record<string, RouteDefinition<Schema<unknown> | undefin
 export type ClientOptions = {
   baseUrl: string
   headers?: Record<string, string>
-  fetch?: typeof globalThis.fetch
+  fetch?: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>
 }
 
 export type RouteInput<R extends RouteDefinition<Schema<unknown> | undefined, Schema<unknown>>> =
