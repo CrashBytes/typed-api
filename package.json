@@ -1,6 +1,6 @@
 {
   "name": "@crashbytes/typed-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Type-safe API client builder with full TypeScript inference. Define routes with schemas, get compile-time safety. Zero dependencies.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
