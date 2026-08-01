@@ -12,8 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "rootDir": "src",
-    "lib": ["ES2020", "DOM"],
-    "ignoreDeprecations": "6.0"
+    "lib": ["ES2020", "DOM"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "__tests__"]
